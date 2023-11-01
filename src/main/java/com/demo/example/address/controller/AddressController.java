@@ -34,7 +34,7 @@ public class AddressController {
 		List<AddressResponseDTO> address = addressService.getAll();
 		resp.setResponseStatus("SUCCESS");
 		resp.setDescription("List of Address");
-		resp.setData(books);
+		resp.setData(address);
 		return resp;
 	}
 	
@@ -47,7 +47,7 @@ public class AddressController {
 			address = addressService.persist(address);
 			resp.setResponseStatus("SUCCESS");
 			resp.setDescription("address saved to the database!");
-			resp.setData(book);
+			resp.setData(address);
 		}catch (Exception e) {
 			logger.error(e.getMessage());
 			resp.setResponseStatus("Failure");

@@ -46,12 +46,12 @@ public class PersonController {
 			Person person = new Person(personDto);
 			person = personService.persist(person);
 			resp.setResponseStatus("SUCCESS");
-			resp.setDescription("Author saved to the database!");
+			resp.setDescription("Person saved to the database!");
 			resp.setData(person);
 		}catch (Exception e) {
 			logger.error(e.getMessage());
 			resp.setResponseStatus("Failure");
-			resp.setDescription("Author could not be saved to the database!");
+			resp.setDescription("Person could not be saved to the database!");
 		}
 		return resp;
 	}
