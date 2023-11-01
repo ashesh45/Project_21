@@ -31,9 +31,9 @@ public class AddressController {
 	@GetMapping("")
 	public ApiResponse getAddresses(){
 		ApiResponse  resp = new ApiResponse();
-		List<AddressResponseDTO> books = addressService.getAll();
+		List<AddressResponseDTO> address = addressService.getAll();
 		resp.setResponseStatus("SUCCESS");
-		resp.setDescription("List of books");
+		resp.setDescription("List of Address");
 		resp.setData(books);
 		return resp;
 	}
@@ -46,12 +46,12 @@ public class AddressController {
 			Address address = new Address(addressDto);
 			address = addressService.persist(address);
 			resp.setResponseStatus("SUCCESS");
-			resp.setDescription("Book saved to the database!");
+			resp.setDescription("address saved to the database!");
 			resp.setData(book);
 		}catch (Exception e) {
 			logger.error(e.getMessage());
 			resp.setResponseStatus("Failure");
-			resp.setDescription("Book could not be saved to the database!");
+			resp.setDescription("address could not be saved to the database!");
 		}
 		return resp;
 	}
