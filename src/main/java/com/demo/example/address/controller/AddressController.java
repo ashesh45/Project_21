@@ -39,7 +39,7 @@ public class AddressController {
 	}
 	
 	@PostMapping("")
-	public ApiResponse addAddresses(@Validated @RequestBody AddressRequestDTO addressDto){
+	public ApiResponse addAddresses(@Validated   @RequestBody AddressRequestDTO addressDto){
 		ApiResponse resp = new ApiResponse();
 		logger.info(addressDto.toString());
 		try {
