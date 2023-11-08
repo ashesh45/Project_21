@@ -74,8 +74,11 @@ public class User {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-	
-	
 
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }
