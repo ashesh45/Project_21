@@ -8,5 +8,6 @@ import com.demo.example.address.entities.AddressResponseDTO;
 public interface AddressService {
 	 List<AddressResponseDTO> getAll();
 	 Address persist(Address address);
-	
+	 
+
 }

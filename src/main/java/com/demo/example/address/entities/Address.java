@@ -1,5 +1,7 @@
 package com.demo.example.address.entities;
 
+import java.util.Date;
+
 import com.demo.example.common.PersistenceEntity;
 
 import jakarta.persistence.Entity;
@@ -27,7 +29,48 @@ public class Address extends PersistenceEntity {
 	private String state;
 	private String city;
     private int housenumber;
-	
+    
+    
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public int getHousenumber() {
+		return housenumber;
+	}
+
+
+	public void setHousenumber(int housenumber) {
+		this.housenumber = housenumber;
+	}
+
+
 	public Address(AddressRequestDTO add) {
 		this.state = add.state;
 		this.city = add.city;
@@ -36,6 +79,5 @@ public class Address extends PersistenceEntity {
 		
 		
 	}
-
 
 }

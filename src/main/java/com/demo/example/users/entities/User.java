@@ -81,4 +81,8 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
+	public User(int i, String string, String encode, String string2, boolean b) {
+		// TODO Auto-generated constructor stub
+	}
+
 }
