@@ -24,6 +24,7 @@ import com.demo.example.address.entities.Address;
 import com.demo.example.address.entities.AddressRequestDTO;
 import com.demo.example.address.entities.AddressResponseDTO;
 import com.demo.example.address.service.AddressService;
+import com.demo.example.address.service.PdfService;
 import com.demo.example.common.ApiResponse;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -81,6 +82,23 @@ public class AddressController {
 		
 		
                 return body;
+	}
+	
+
+	@GetMapping("/createPdf")
+	public ResponseEntity<InputStreamResource> createPdf() {
+		
+		ByteArrayInputStream pdf = pdfService.createPdf();
+		
+		HttpHeaders httpHeaders=new HttpHeaders();
+		httpHeaders.add("Content-Disposition","inline; filename=address.pdf");
+		
+		return ResponseEntity
+				.ok()
+				.headers(httpHeaders)
+				.contentType(MediaType.APPLICATION_PDF)
+				.body(new InputStreamResource(pdf));
+		
 	}
 	
 
